@@ -37,6 +37,8 @@
             color: white;
             padding: 2rem 1rem;
             text-align: center;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
         header h1 {
@@ -53,51 +55,6 @@
             font-weight: 500;
         }
 
-        /* Student ID Card */
-        .student-info {
-            background: white;
-            max-width: 600px;
-            margin: -2rem auto 2rem;
-            padding: 1.5rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            position: relative;
-            z-index: 10;
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 1rem;
-            border-top: 4px solid var(--primary-color);
-        }
-
-        .info-group {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .info-label {
-            font-size: 0.85rem;
-            color: var(--text-light);
-            font-weight: 600;
-            text-transform: uppercase;
-        }
-
-        .info-input {
-            border: none;
-            border-bottom: 2px solid #e2e8f0;
-            padding: 0.5rem 0;
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--text-main);
-            outline: none;
-            width: 150px;
-            background: transparent;
-        }
-        
-        .info-input:focus {
-            border-bottom-color: var(--primary-color);
-        }
-
         /* Navigation Tabs */
         .nav-tabs {
             display: flex;
@@ -107,6 +64,9 @@
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
             gap: 0.5rem;
             flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
         .tab-btn {
@@ -121,6 +81,12 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .tab-btn:hover {
+            background: #eff6ff;
+            color: var(--primary-color);
         }
 
         .tab-btn.active {
@@ -139,30 +105,39 @@
 
         .section {
             display: none;
+            animation: fadeIn 0.4s ease;
         }
 
         .section.active {
             display: block;
         }
 
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         /* Simple Card Styles */
         .card {
             background: var(--card-bg);
             border-radius: 12px;
-            padding: 2rem;
+            padding: 2.5rem 2rem;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
             margin-bottom: 1.5rem;
+            border-top: 4px solid var(--primary-color);
         }
 
         .card h2 {
             margin-bottom: 1rem;
-            color: var(--primary-color);
+            color: var(--text-main);
+            font-size: 1.5rem;
         }
 
         .card p {
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
             color: var(--text-light);
+            font-size: 1.05rem;
         }
 
         /* Big Action Button */
@@ -178,13 +153,15 @@
             text-decoration: none;
             font-weight: bold;
             font-size: 1.1rem;
-            transition: background 0.3s;
+            transition: background 0.3s, transform 0.2s;
             width: 100%;
             max-width: 300px;
+            box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2);
         }
 
         .btn-action:hover {
             background: var(--secondary-color);
+            transform: translateY(-2px);
         }
 
         /* Footer */
@@ -194,11 +171,13 @@
             color: var(--text-light);
             background: var(--card-bg);
             margin-top: auto;
+            border-top: 1px solid #e2e8f0;
         }
         
         footer .credits {
             font-weight: 700;
             color: var(--primary-color);
+            margin-top: 0.5rem;
         }
     </style>
 </head>
@@ -226,7 +205,7 @@
         <!-- Notice Board Section -->
         <div id="announcements" class="section active">
             <div class="card">
-                <i class="fas fa-bullhorn" style="font-size: 3rem; color: var(--primary-color); margin-bottom: 1rem;"></i>
+                <i class="fas fa-bullhorn" style="font-size: 3.5rem; color: var(--primary-color); margin-bottom: 1.5rem;"></i>
                 <h2>Class Notice Board</h2>
                 <p>Click below to open the live notice board. Mr. Karan updates this document with all important announcements.</p>
                 <!-- REPLACE '#' WITH GOOGLE DOC LINK -->
@@ -237,7 +216,7 @@
         <!-- Homework Section -->
         <div id="homework" class="section">
             <div class="card">
-                <i class="fas fa-book-open" style="font-size: 3rem; color: var(--primary-color); margin-bottom: 1rem;"></i>
+                <i class="fas fa-book-open" style="font-size: 3.5rem; color: var(--primary-color); margin-bottom: 1.5rem;"></i>
                 <h2>Daily Homework Assignments</h2>
                 <p>View the live homework sheet. This opens a Google Doc that is updated daily by your teacher.</p>
                 <!-- REPLACE '#' WITH GOOGLE DOC LINK -->
@@ -248,7 +227,7 @@
         <!-- PDF Library Section -->
         <div id="materials" class="section">
             <div class="card">
-                <i class="fas fa-file-pdf" style="font-size: 3rem; color: var(--primary-color); margin-bottom: 1rem;"></i>
+                <i class="fas fa-file-pdf" style="font-size: 3.5rem; color: var(--primary-color); margin-bottom: 1.5rem;"></i>
                 <h2>Study Materials & PDFs</h2>
                 <p>Access the official Google Drive folder containing all syllabus PDFs, grammar guides, and question papers.</p>
                 <!-- REPLACE '#' WITH GOOGLE DRIVE FOLDER LINK -->
@@ -281,4 +260,3 @@
     </script>
 </body>
 </html>
-
