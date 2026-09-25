@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -31,11 +31,10 @@
             min-height: 100vh;
         }
 
-        /* Header Styles */
         header {
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
-            padding: 2rem 1rem;
+            padding: 2.5rem 1rem;
             text-align: center;
             margin-bottom: 2rem;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
@@ -53,9 +52,9 @@
             border-radius: 9999px;
             margin-top: 1rem;
             font-weight: 500;
+            font-size: 0.95rem;
         }
 
-        /* Navigation Tabs */
         .nav-tabs {
             display: flex;
             justify-content: center;
@@ -94,7 +93,6 @@
             color: white;
         }
 
-        /* Main Content Area */
         .container {
             max-width: 800px;
             margin: 2rem auto;
@@ -117,7 +115,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Simple Card Styles */
         .card {
             background: var(--card-bg);
             border-radius: 12px;
@@ -138,9 +135,11 @@
             margin-bottom: 2rem;
             color: var(--text-light);
             font-size: 1.05rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        /* Big Action Button */
         .btn-action {
             display: inline-flex;
             align-items: center;
@@ -155,7 +154,7 @@
             font-size: 1.1rem;
             transition: background 0.3s, transform 0.2s;
             width: 100%;
-            max-width: 300px;
+            max-width: 320px;
             box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2);
         }
 
@@ -164,7 +163,6 @@
             transform: translateY(-2px);
         }
 
-        /* Footer */
         footer {
             text-align: center;
             padding: 2rem;
@@ -190,13 +188,13 @@
 
     <nav class="nav-tabs">
         <button class="tab-btn active" onclick="openTab('announcements')">
-            <i class="fas fa-bell"></i> Live Notice Board
+            <i class="fas fa-bell"></i> Notice Board
         </button>
         <button class="tab-btn" onclick="openTab('homework')">
-            <i class="fas fa-tasks"></i> Daily Homework
+            <i class="fas fa-tasks"></i> Homework
         </button>
         <button class="tab-btn" onclick="openTab('materials')">
-            <i class="fas fa-folder"></i> PDF Library
+            <i class="fas fa-folder-open"></i> PDF Library
         </button>
     </nav>
 
@@ -206,10 +204,10 @@
         <div id="announcements" class="section active">
             <div class="card">
                 <i class="fas fa-bullhorn" style="font-size: 3.5rem; color: var(--primary-color); margin-bottom: 1.5rem;"></i>
-                <h2>Class Notice Board</h2>
-                <p>Click below to open the live notice board. Mr. Karan updates this document with all important announcements.</p>
-                <!-- REPLACE '#' WITH GOOGLE DOC LINK -->
-                <a href="#" target="_blank" class="btn-action">Open Notice Board</a>
+                <h2>Master Notice Board</h2>
+                <p>Click below to open the official notice directory. You will see a full list of announcements for all classes. Just select the document for your class.</p>
+                <!-- REPLACE '#' WITH GOOGLE DRIVE FOLDER LINK OR DOC LINK -->
+                <a href="#" target="_blank" class="btn-action"><i class="fas fa-list"></i> View All Notices</a>
             </div>
         </div>
 
@@ -217,10 +215,10 @@
         <div id="homework" class="section">
             <div class="card">
                 <i class="fas fa-book-open" style="font-size: 3.5rem; color: var(--primary-color); margin-bottom: 1.5rem;"></i>
-                <h2>Daily Homework Assignments</h2>
-                <p>View the live homework sheet. This opens a Google Doc that is updated daily by your teacher.</p>
-                <!-- REPLACE '#' WITH GOOGLE DOC LINK -->
-                <a href="#" target="_blank" class="btn-action">View Today's Homework</a>
+                <h2>Homework Directory</h2>
+                <p>Click below to open the homework folder. Browse the list to find your specific class and see today's assignments.</p>
+                <!-- REPLACE '#' WITH GOOGLE DRIVE FOLDER LINK -->
+                <a href="#" target="_blank" class="btn-action"><i class="fas fa-list"></i> Open Homework List</a>
             </div>
         </div>
 
@@ -228,10 +226,10 @@
         <div id="materials" class="section">
             <div class="card">
                 <i class="fas fa-file-pdf" style="font-size: 3.5rem; color: var(--primary-color); margin-bottom: 1.5rem;"></i>
-                <h2>Study Materials & PDFs</h2>
-                <p>Access the official Google Drive folder containing all syllabus PDFs, grammar guides, and question papers.</p>
+                <h2>Study Materials Library</h2>
+                <p>Click below to open the master library. You can browse all available syllabus files, grammar notes, and question papers.</p>
                 <!-- REPLACE '#' WITH GOOGLE DRIVE FOLDER LINK -->
-                <a href="https://drive.google.com/file/d/1Ma3mo3VKGodxIgM-hhoR-RVcB_2k9cZU/view?usp=drivesdk" target="_blank" class="btn-action">Open Drive Folder</a>
+                <a href="#" target="_blank" class="btn-action"><i class="fas fa-list"></i> Browse PDF Library</a>
             </div>
         </div>
 
